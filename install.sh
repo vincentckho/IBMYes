@@ -96,7 +96,7 @@ install(){
     echo "进行安装。。。"
     cd ${SH_PATH}/IBMYes/v2ray-cloudfoundry
     ibmcloud target --cf
-    echo "N"|ibmcloud cf install
+    echo "y"|ibmcloud cf install
     ibmcloud cf push
     echo "安装完成。"
     echo "生成的随机 UUID：${UUID}"
@@ -104,8 +104,8 @@ install(){
     VMESSCODE=$(base64 -w 0 << EOF
     {
       "v": "2",
-      "ps": "ibmyes",
-      "add": "ibmyes.us-south.cf.appdomain.cloud",
+      "ps": "vinc",
+      "add": "vinc.us-south.cf.appdomain.cloud",
       "port": "443",
       "id": "${UUID}",
       "aid": "4",
